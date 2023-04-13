@@ -26,10 +26,13 @@ function fun() {
   if (al == 1) {
     rs.style.top = "10px";
     rst.innerText = "🤩 - X is Win - 🤩";
+    return false
   } else if (al == 2) {
     rs.style.top = "10px";
     rst.innerText = "🤩- O is Win -🤩";
+    return false
   }
+  return true
 }
 
 flag = 1;
@@ -48,8 +51,7 @@ $(document).ready(function () {
     }
     innum = v.charAt(1) - 1;
     arr[innum] = $("#" + v).html();
-    fun();
-    draw();
+    if(fun())draw();
   });
 });
 
